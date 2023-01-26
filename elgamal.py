@@ -27,5 +27,5 @@ def decrypt(sk, c):
     m = 0
     c2 = c[1]
     c1 = c[0]
-    m = pow(c2, 1, p) / pow(c1, sk, p)
+    m = pow(c2, 1, p) * pow(c1, -sk, p) % p
     return m
